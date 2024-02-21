@@ -1,0 +1,43 @@
+﻿<Window x:Class="SystemProgramming_Process_HW1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemProgramming_Process_HW1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Button  Margin="269,10,376,0" Background="Red" Content="Create Proccess" Foreground="White" FontWeight="Bold" Height="42" VerticalAlignment="Top" Click="Button_Click"/>
+            <TextBox Margin="10,10,564,10" Background="White" Foreground="Black" Name="textBox" />
+            <Button  Margin="630,10,10,10" Background="Red" Content="End Proccess" Foreground="White" FontWeight="Bold" Click="Button_Click_2"/>
+            <Button  Margin="447,10,193,10" Background="Blue" Content="Add Black Proccess" Foreground="White" FontWeight="Bold" Click="Button_Click_1"/>
+
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ListView ItemsSource="{Binding Proces}" Name="listviewitem"   SelectedValuePath="Id">
+                <ListView.View  >
+                    <GridView >
+
+                        <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Id" Width="100" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Machine Name"  Width="200" DisplayMemberBinding="{Binding MachineName}"/>
+
+
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+
+    </Grid>
+</Window>
